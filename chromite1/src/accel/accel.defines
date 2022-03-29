@@ -1,0 +1,6 @@
+`define ACC_OPCODE       'b0100
+`define Cl_Accum_f7     'b00001
+`define Accum_NoResp_f7 'b00010
+`define Arg_Noresp_f7  'b00100
+`define Rd_Accum_f7     'b01000
+`define Accum_resp_f7   'b10000
