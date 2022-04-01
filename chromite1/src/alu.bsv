@@ -259,7 +259,7 @@ package alu;
     // send inputs to the rocc unit and send a stall signal to the execute stage.
       `ifdef rocc
         if(inst_type == ROCC)begin
-          accel._start(op1, op2, fn, op3[11 : 5], funct3);
+          accel.ma_inputs(op1, op2, op3[11 : 5], funct3);
         end
       `endif
 
@@ -283,8 +283,8 @@ package alu;
       else
     `endif
     `ifdef rocc
-      if(accel.get_result.valid)
-        return accel.get_result;
+      if(accel.mv_output.valid)
+        return accel.mv_output;
       else
     `endif
         return mbox.mv_output;
